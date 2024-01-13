@@ -19,9 +19,7 @@ const SignupControllers = async (req, res) => {
   ) {
     return res.status(400).json("All Filed Are Required");
   }
-  const AA = [
-   
-  ];
+  const AA = [];
   for (let i = 0; i < AA.length; i++) {
     const newUser = await User.create({
       MIS: AA[i].mis,

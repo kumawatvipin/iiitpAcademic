@@ -1,5 +1,5 @@
 const User = require("../../../model/sem4/SecA");
-const SignupControllers = async (req, res) => {
+const SecASignupControllers = async (req, res) => {
   const MIS = req.body.MIS;
   const name = req.body.name;
   const currentPresent = req.body.currentPresent;
@@ -48,4 +48,4 @@ const SignupControllers = async (req, res) => {
   res.status(201).send("Success");
 };
 
-module.exports = { SignupControllers };
+module.exports = { SecASignupControllers };

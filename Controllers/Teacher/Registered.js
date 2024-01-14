@@ -25,9 +25,9 @@ const TeacherSignupControllers = async (req, res) => {
     });
 
     newUser.save();
-    return res.status(200).json(newUser);
-  } catch (error) {
-    return res.status(401).json({ error, message: "Error in Controllers" });
+    return res.json(success(200, "Successfully Signup"));
+  } catch (err) {
+    return res.send(error(403, err.message));
   }
 };
 const TeacherloginController = async (req, res) => {

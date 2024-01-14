@@ -19,9 +19,9 @@ route.post("/cn", CNSignupControllers);
 route.post("/ds", DSSignupControllers);
 route.post("/os", OSSignupControllers);
 route.post("/java", JavaSignupControllers);
-route.post('/ac',ACSignupControllers);
-route.post('/aec',AECSignupControllers);
-route.post('/sns',SNSSignupControllers)
+route.post("/ac", ACSignupControllers);
+route.post("/aec", AECSignupControllers);
+route.post("/sns", SNSSignupControllers);
 route.post("/secA", SecASignupControllers);
 route.post("/secB", SecBSignupControllers);
 

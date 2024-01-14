@@ -1,5 +1,5 @@
-const User = require("../../../model/Sem6/secA");
-const SecASignupControllers = async (req, res) => {
+const User = require("../../../model/sem4/AEC");
+const AECSignupControllers = async (req, res) => {
   const MIS = req.body.MIS;
   const name = req.body.name;
   const currentPresent = req.body.currentPresent;
@@ -22,8 +22,8 @@ const SecASignupControllers = async (req, res) => {
   const AA = [];
   for (let i = 0; i < AA.length; i++) {
     const newUser = await User.create({
-      MIS: AA[i].mis,
-      name: AA[i].name,
+      MIS: AA[i]?.mis,
+      name: AA[i]?.name,
       currentPresent,
       currentPercentage,
       currentAbsent,
@@ -48,4 +48,4 @@ const SecASignupControllers = async (req, res) => {
   res.status(201).send("Success");
 };
 
-module.exports = { SecASignupControllers };
+module.exports = { AECSignupControllers };

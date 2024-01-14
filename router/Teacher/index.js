@@ -1,6 +1,6 @@
 const {
   TeacherSignupControllers,
-  TeacherloginController
+  TeacherloginController,
 } = require("../../Controllers/Teacher/Registered");
 
 const route = require("express").Router();

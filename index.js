@@ -6,13 +6,20 @@ dotenv.config("./.env");
 const PORT = process.env.PORT;
 const Db = require("./DbConnect");
 const cookie = require("cookie-parser");
-
+const cors = require("cors");
 const Sem2Router = require("./router/Sem/Sem2");
 const Sem4Router = require("./router/Sem/sem4");
 const Sem6Router = require("./router/Sem/sem6");
 const teacherRouter = require("./router/Teacher");
 
 const attendanceRouter = require("./router/AttendanceShow");
+
+app.use(
+  cors({
+    credentials: true,
+    origin: process.env.Client_URL,
+  })
+);
 
 app.use(cookie());
 app.get("/", (req, res) => {

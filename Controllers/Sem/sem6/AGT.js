@@ -1,4 +1,4 @@
-const User = require("../../../model/Sem6/AGT");
+const User = require("../../../model/sem6/AGT");
 const AGTSignupControllers = async (req, res) => {
   const MIS = req.body.MIS;
   const name = req.body.name;

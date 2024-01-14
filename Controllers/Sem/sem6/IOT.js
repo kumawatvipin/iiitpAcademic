@@ -1,4 +1,4 @@
-const User = require("../../../model/Sem6/IOT");
+const User = require("../../../model/sem6/IOT");
 const IOTSignupControllers = async (req, res) => {
   const MIS = req.body.MIS;
   const name = req.body.name;

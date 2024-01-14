@@ -1,4 +1,4 @@
-const User = require("../../../model/Sem6/ISS");
+const User = require("../../../model/sem6/ISS");
 const ISSSignupControllers = async (req, res) => {
   const MIS = req.body.MIS;
   const name = req.body.name;

@@ -1,4 +1,4 @@
-const User = require("../../../model/Sem6/ES");
+const User = require("../../../model/sem6/ES");
 const ESSignupControllers = async (req, res) => {
   const MIS = req.body.MIS;
   const name = req.body.name;

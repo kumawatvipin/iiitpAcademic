@@ -1,4 +1,4 @@
-const User = require("../../../model/Sem6/CC");
+const User = require("../../../model/sem6/CC");
 const CCSignupControllers = async (req, res) => {
   const MIS = req.body.MIS;
   const name = req.body.name;

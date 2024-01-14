@@ -1,4 +1,4 @@
-const User = require("../../../model/Sem6/CG");
+const User = require("../../../model/sem6/CG");
 const CGSignupControllers = async (req, res) => {
   const MIS = req.body.MIS;
   const name = req.body.name;

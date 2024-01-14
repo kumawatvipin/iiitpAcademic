@@ -1,4 +1,4 @@
-const User = require("../../../model/Sem6/CV");
+const User = require("../../../model/sem6/CV");
 const CVSignupControllers = async (req, res) => {
   const MIS = req.body.MIS;
   const name = req.body.name;

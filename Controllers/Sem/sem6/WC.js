@@ -1,4 +1,4 @@
-const User = require("../../../model/Sem6/WC");
+const User = require("../../../model/sem6/WC");
 const WCSignupControllers = async (req, res) => {
   const MIS = req.body.MIS;
   const name = req.body.name;

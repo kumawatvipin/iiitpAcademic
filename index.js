@@ -17,6 +17,7 @@ const attendanceRouter = require("./router/AttendanceShow");
 app.use(
   cors({
     credentials: true,
+    // origin: "http://localhost:3000/",
     origin: process.env.Client_URL,
   })
 );

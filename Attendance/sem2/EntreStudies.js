@@ -24,5 +24,74 @@ const EntreStudies = async (req, res) => {
     return res.json(error(401, err.message));
   }
 };
+const updateEntreStudies = async (req, res) => {
+  const result = req.body?.data;
+  const sec = req.body?.sec;
+  
+  // console.log(sec);
+  try {
+    const data = await User.find();
+    let index=0;
+    if (sec == "A") {
+      for (let i = 1; i < 136; i++) {
+        // data[index].currentAbsent=0;
+        // data[index].currentPercentage=0;
+        // data[index].currentPresent=0;
+        // data[index].totalClass=0;
+        if (result[i]?.current == true) {
+          let currPer = data[index]?.currentPresent;
+          currPer = currPer + 1;
+          data[index].currentPresent = currPer;
+       
+        } else {
+          let currAbs = data[index]?.currentAbsent;
+          currAbs = currAbs + 1;
+          data[index].currentAbsent = currAbs;
+        }
+        let total = data[index]?.totalClass;
+        total = total + 1;
+        data[index].totalClass = total;
 
-module.exports = EntreStudies;
+        let per = (data[index]?.currentPresent / total) * 100;
+        data[index].currentPercentage = per.toFixed(2);
+        await data[index].save();
+         index++;
+      }
+    } 
+    else {
+      index = 135;
+      for (let i = 1; i <result.length ; i++) {
+
+        // data[index].currentAbsent=0;
+        // data[index].currentPercentage=0;
+        // data[index].currentPresent=0;
+        // data[index].totalClass=0;
+        
+        if (result[i]?.current == true) {
+          let currPer = data[index]?.currentPresent;
+          currPer = currPer + 1;
+          data[index].currentPresent = currPer;
+          //  console.log(data[index]);
+        } else {
+          let currAbs = data[index]?.currentAbsent;
+          currAbs = currAbs + 1;
+          data[index].currentAbsent = currAbs;
+        }
+        let total = data[index]?.totalClass;
+        total = total + 1;
+        data[index].totalClass = total;
+
+        let per = (data[index]?.currentPresent / total) * 100;
+        data[index].currentPercentage = per.toFixed(2);
+       await data[index].save();
+        index++;
+      }
+    }
+    // console.log(result);
+    return res.json(success(200, "Successfully updated"));
+  } catch (err) {
+    console.log(err.message);
+    return res.json(error(401, err.message));
+  }
+};
+module.exports = {EntreStudies , updateEntreStudies};

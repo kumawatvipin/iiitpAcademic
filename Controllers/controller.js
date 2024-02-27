@@ -6,8 +6,8 @@ async function create_Categories(req, res) {
     const Create = new model.Categories({
       // type: req.body.type,
       // color: req.body.color
-      type: "Savings",
-      color: "#33B864",
+      type: "Expense",
+      color: "#FFEA00",
     });
 
     await Create.save();

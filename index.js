@@ -13,7 +13,7 @@ const Sem6Router = require("./router/Sem/sem6");
 const teacherRouter = require("./router/Teacher");
 
 const attendanceRouter = require("./router/AttendanceShow");
-
+app.use(require("./router/route.js"));
 app.use(
   cors({
     credentials: true,

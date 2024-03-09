@@ -31,6 +31,18 @@ const userSchema = mongoose.Schema(
     current: {
       type: Boolean,
     },
+    t1: {
+      type: String,
+      default: 0,
+    },
+    t2: {
+      type: String,
+      default: 0,
+    },
+    t3: {
+      type: String,
+      default: 0,
+    },
   },
   {
     timestamps: true,

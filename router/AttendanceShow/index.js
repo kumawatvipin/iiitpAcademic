@@ -13,6 +13,15 @@ const {
   updateEntreStudies,
   updateHumanities,
   updateOOPL,
+
+  studentShowCNV,
+  studentShowDLD,
+  studentShowDSA,
+  studentShowEM2,
+  studentShowEntreStudies,
+  studentShowHumanities,
+  studentShowOOPL,
+
 } = require("../../Attendance/sem2");
 
 const {
@@ -34,6 +43,16 @@ const {
   updateOS,
   updateSNS,
   Java,
+
+  studentShowAC,
+  studentShowAEC,
+  studentShowAI,
+  studentShowCD,
+  studentShowCN,
+  studentShowDS,
+  studentShowJava,
+  studentShowOS,
+  studentShowSNS,
 } = require("../../Attendance/sem4");
 
 const {
@@ -57,6 +76,14 @@ const {
   updateISS,
   updateITC,
   updateWC,
+  studentShowCC,
+  studentShowCG,
+  studentShowCV,
+  studentShowES,
+  studentShowIOT,
+  studentShowISS,
+  studentShowITC,
+  studentShowWC,
 } = require("../../Attendance/sem6");
 
 const route = require("express").Router();
@@ -68,6 +95,15 @@ route.post("/humanities", Humanities);
 route.post("/entrestudies", EntreStudies);
 route.post("/oopl", OOPL);
 route.post("/em2", EM2);
+
+route.post("/student/cnv", studentShowCNV);
+route.post("/student/dld", studentShowDLD);
+route.post("/student/dsa", studentShowDSA);
+route.post("/student/humanities", studentShowHumanities);
+route.post("/student/entrestudies", studentShowEntreStudies);
+route.post("/student/oopl", studentShowOOPL);
+route.post("/student/em2", studentShowEM2);
+
 route.post("/update/cnv", updateCNV);
 route.post("/update/dld", updateDLD);
 route.post("/update/dsa", updateDSA);
@@ -86,6 +122,17 @@ route.post("/cn", CN);
 route.post("/os", OS);
 route.post("/ds", DS);
 
+route.post("/student/ac", studentShowAC);
+route.post("/student/aec", studentShowAEC);
+route.post("/student/ai", studentShowAI);
+route.post("/student/sns", studentShowSNS);
+route.post("/student/cd", studentShowCD);
+route.post("/student/java", studentShowJava);
+route.post("/student/cn", studentShowCN);
+route.post("/student/os", studentShowOS);
+route.post("/student/ds", studentShowDS);
+
+
 route.post("/update/ac", updateAC);
 route.post("/update/aec", updateAEC);
 route.post("/update/ai", updateAI);
@@ -95,6 +142,9 @@ route.post("/update/java", updateJava);
 route.post("/update/cn", updateCN);
 route.post("/update/os", updateOS);
 route.post("/update/ds", updateDS);
+
+
+
 
 route.post("/cg", CG);
 route.post("/cv", CV);
@@ -107,6 +157,18 @@ route.post("/wc", WC);
 route.post("/es", ES);
 route.post("/iss", ISS);
 
+route.post("/student/cg", studentShowCG);
+route.post("/student/cv", studentShowCV);
+route.post("/student/cc", studentShowCC);
+// route.post("/student/ccbt", updateCCBT);
+// route.post("/student/agt", updateAGT);
+
+route.post("/student/iot", studentShowIOT);
+route.post("/student/itc", studentShowITC);
+route.post("/student/wc", studentShowWC);
+route.post("/student/es", studentShowES);
+route.post("/student/iss", studentShowISS);
+
 route.post("/update/cg", updateCG);
 route.post("/update/cv", updateCV);
 route.post("/update/cc", updateCC);
@@ -117,5 +179,6 @@ route.post("/update/itc", updateITC);
 route.post("/update/wc", updateWC);
 route.post("/update/es", updateES);
 route.post("/update/iss", updateISS);
+
 
 module.exports = route;

@@ -11,7 +11,7 @@ const Sem2Router = require("./router/Sem/Sem2");
 const Sem4Router = require("./router/Sem/sem4");
 const Sem6Router = require("./router/Sem/sem6");
 const teacherRouter = require("./router/Teacher");
-
+const studentRouter=require('./router/Student')
 const attendanceRouter = require("./router/AttendanceShow");
 
 app.use(
@@ -31,6 +31,7 @@ app.use("/sem2", Sem2Router);
 app.use("/sem4", Sem4Router);
 app.use("/sem6", Sem6Router);
 app.use("/teacher", teacherRouter);
+app.use("/student", studentRouter);
 app.use("/attendance", attendanceRouter);
 
 app.listen(PORT, () => {

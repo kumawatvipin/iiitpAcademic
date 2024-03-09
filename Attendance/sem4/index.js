@@ -1,12 +1,12 @@
-const { AC, updateAC } = require("./AC");
-const { CD, updateCD } = require(`./CD`);
-const { AEC, updateAEC } = require(`./AEC`);
-const { AI, updateAI } = require(`./AI`);
-const { CN, updateCN } = require(`./CN`);
-const { DS, updateDS } = require(`./DS`);
-const { Java, updateJava } = require(`./Java`);
-const { OS, updateOS } = require(`./OS`);
-const { SNS, updateSNS } = require(`./SNS`);
+const { AC, updateAC, studentShowAC } = require("./AC");
+const { CD, updateCD, studentShowCD } = require(`./CD`);
+const { AEC, updateAEC, studentShowAEC } = require(`./AEC`);
+const { AI, updateAI, studentShowAI } = require(`./AI`);
+const { CN, updateCN, studentShowCN } = require(`./CN`);
+const { DS, updateDS, studentShowDS } = require(`./DS`);
+const { Java, updateJava, studentShowJava } = require(`./Java`);
+const { OS, updateOS, studentShowOS } = require(`./OS`);
+const { SNS, updateSNS, studentShowSNS } = require(`./SNS`);
 
 module.exports = {
   AC,
@@ -27,4 +27,14 @@ module.exports = {
   Java,
   OS,
   SNS,
+
+  studentShowAC,
+  studentShowAEC,
+  studentShowAI,
+  studentShowCD,
+  studentShowCN,
+  studentShowDS,
+  studentShowJava,
+  studentShowOS,
+  studentShowSNS,
 };

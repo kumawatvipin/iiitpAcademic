@@ -1,33 +1,42 @@
-const { AGT, updateAGT } = require("./AGT");
-const { CG, updateCG } = require("./CG");
-const { CC, updateCC } = require("./CC");
-const { CV, updateCV } = require("./CV");
+const { AGT, updateAGT  } = require("./AGT");
+const { CG, updateCG ,studentShowCG} = require("./CG");
+const { CC, updateCC,studentShowCC } = require("./CC");
+const { CV, updateCV ,studentShowCV } = require("./CV");
 const { CCBT, updateCCBT } = require("./CCBT");
-const { IOT, updateIOT } = require("./IOT");
-const { ISS, updateISS } = require("./ISS");
-const { WC, updateWC } = require("./WC");
-const { ITC, updateITC } = require("./ITC");
-const { ES, updateES } = require("./ES");
+const { IOT, updateIOT ,studentShowIOT } = require("./IOT");
+const { ISS, updateISS ,studentShowISS} = require("./ISS");
+const { WC, updateWC ,studentShowWC } = require("./WC");
+const { ITC, updateITC ,studentShowITC } = require("./ITC");
+const { ES, updateES , studentShowES} = require("./ES");
 
 module.exports = {
   AGT,
   updateAGT,
   CG,
   updateCG,
+  studentShowCG,
   CC,
   updateCC,
+  studentShowCC,
   CCBT,
   updateCCBT,
   CV,
   updateCV,
+  studentShowCV,
   IOT,
   updateIOT,
+  studentShowIOT,
   ISS,
   updateISS,
+  studentShowISS,
   WC,
   updateWC,
+  studentShowWC,
   ITC,
   updateITC,
+  studentShowITC,
   ES,
   updateES,
+  studentShowES
+
 };

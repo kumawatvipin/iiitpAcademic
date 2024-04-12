@@ -108,4 +108,45 @@ const studentShowDLD = async (req, res) => {
     return res.json(error(401, err.message));
   }
 };
-module.exports = {DLD ,updateDLD , studentShowDLD};
+
+const updateDLDMarks = async (req, res) => {
+  const marks = req.body?.marks;
+  const sec = req.body?.sec;
+ 
+  try {
+    const data = await User.find();
+    let index = 0;
+    // return res.json(success(200,{data}))
+    if (sec == "A") {
+      for (let i = 1; i < 136; i++) {
+        data[index].t1 =0;
+        data[index].t2 =0;
+        data[index].t3 =0;
+
+        data[index].t1 += parseInt(marks[i].t1);
+        data[index].t2 += parseInt(marks[i].t2);
+        data[index].t3 += parseInt(marks[i].t3);
+        await data[index].save();
+        index++;
+      }
+    } else {
+      index = 135;
+      for (let i = 1; i < marks.length; i++) {
+        data[index].t1 =0;
+        data[index].t2 =0;
+        data[index].t3 =0;
+        data[index].t1 += marks[i].t1;
+        data[index].t2 += marks[i].t2;
+        data[index].t3 += marks[i].t3;
+        await data[index].save();
+        index++;
+      }
+    }
+    // console.log(result);
+    return res.json(success(200, "Successfully updated"));
+  } catch (err) {
+    console.log(err.message);
+    return res.json(error(401, err.message));
+  }
+};
+module.exports = {DLD ,updateDLD , studentShowDLD , updateDLDMarks};

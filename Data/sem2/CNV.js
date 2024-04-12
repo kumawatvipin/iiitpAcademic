@@ -121,28 +121,32 @@ const studentShowCNVMarks = async (req, res) => {
 const updateCNVMarks = async (req, res) => {
   const marks = req.body?.marks;
   const sec = req.body?.sec;
-
-  // console.log(marks);
-  // return res.json(success(200,marks))
+ 
   try {
     const data = await User.find();
     let index = 0;
     // return res.json(success(200,{data}))
     if (sec == "A") {
       for (let i = 1; i < 136; i++) {
-        
-        data[index].t1+=marks[index].t1;
-        data[index].t2+=marks[index].t2;
-        data[index].t3+=marks[index].t3;
+        data[index].t1 =0;
+        data[index].t2 =0;
+        data[index].t3 =0;
+
+        data[index].t1 += parseInt(marks[i].t1);
+        data[index].t2 += parseInt(marks[i].t2);
+        data[index].t3 += parseInt(marks[i].t3);
         await data[index].save();
         index++;
       }
     } else {
       index = 135;
-      for (let i = 1; i < data.length; i++) {
-        data[index].t1+=marks[index].t1;
-        data[index].t2+=marks[index].t2;
-        data[index].t3+=marks[index].t3;
+      for (let i = 1; i < marks.length; i++) {
+        data[index].t1 =0;
+        data[index].t2 =0;
+        data[index].t3 =0;
+        data[index].t1 += marks[i].t1;
+        data[index].t2 += marks[i].t2;
+        data[index].t3 += marks[i].t3;
         await data[index].save();
         index++;
       }
@@ -153,7 +157,6 @@ const updateCNVMarks = async (req, res) => {
     console.log(err.message);
     return res.json(error(401, err.message));
   }
- 
 };
 module.exports = {
   CNV,

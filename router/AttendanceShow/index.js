@@ -14,6 +14,8 @@ const {
   updateHumanities,
   updateOOPL,
 
+  updateCNVMarks,
+
   studentShowCNV,
   studentShowDLD,
   studentShowDSA,
@@ -22,7 +24,8 @@ const {
   studentShowHumanities,
   studentShowOOPL,
 
-} = require("../../Attendance/sem2");
+  studentShowCNVMarks,
+} = require("../../Data/sem2");
 
 const {
   AC,
@@ -53,7 +56,7 @@ const {
   studentShowJava,
   studentShowOS,
   studentShowSNS,
-} = require("../../Attendance/sem4");
+} = require("../../Data/sem4");
 
 const {
   CC,
@@ -84,7 +87,7 @@ const {
   studentShowISS,
   studentShowITC,
   studentShowWC,
-} = require("../../Attendance/sem6");
+} = require("../../Data/sem6");
 
 const route = require("express").Router();
 
@@ -112,6 +115,11 @@ route.post("/update/entrestudies", updateEntreStudies);
 route.post("/update/oopl", updateOOPL);
 route.post("/update/em2", updateEM2);
 
+
+route.post("/marks/cnv", updateCNVMarks);
+route.post("/marks/show/cnv", updateCNVMarks);
+
+
 route.post("/ac", AC);
 route.post("/aec", AEC);
 route.post("/ai", AI);
@@ -132,7 +140,6 @@ route.post("/student/cn", studentShowCN);
 route.post("/student/os", studentShowOS);
 route.post("/student/ds", studentShowDS);
 
-
 route.post("/update/ac", updateAC);
 route.post("/update/aec", updateAEC);
 route.post("/update/ai", updateAI);
@@ -142,9 +149,6 @@ route.post("/update/java", updateJava);
 route.post("/update/cn", updateCN);
 route.post("/update/os", updateOS);
 route.post("/update/ds", updateDS);
-
-
-
 
 route.post("/cg", CG);
 route.post("/cv", CV);
@@ -179,6 +183,5 @@ route.post("/update/itc", updateITC);
 route.post("/update/wc", updateWC);
 route.post("/update/es", updateES);
 route.post("/update/iss", updateISS);
-
 
 module.exports = route;

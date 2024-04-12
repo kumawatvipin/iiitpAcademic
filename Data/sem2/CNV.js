@@ -26,11 +26,11 @@ const CNV = async (req, res) => {
 const updateCNV = async (req, res) => {
   const result = req.body?.data;
   const sec = req.body?.sec;
- 
+
   // console.log(sec);
   try {
     const data = await User.find();
-    let index=0;
+    let index = 0;
     if (sec == "A") {
       for (let i = 1; i < 136; i++) {
         // data[index].currentAbsent=0;
@@ -41,7 +41,6 @@ const updateCNV = async (req, res) => {
           let currPer = data[index]?.currentPresent;
           currPer = currPer + 1;
           data[index].currentPresent = currPer;
-       
         } else {
           let currAbs = data[index]?.currentAbsent;
           currAbs = currAbs + 1;
@@ -54,18 +53,16 @@ const updateCNV = async (req, res) => {
         let per = (data[index]?.currentPresent / total) * 100;
         data[index].currentPercentage = per.toFixed(2);
         await data[index].save();
-         index++;
+        index++;
       }
-    } 
-    else {
+    } else {
       index = 135;
-      for (let i = 1; i <result.length ; i++) {
-
+      for (let i = 1; i < result.length; i++) {
         // data[index].currentAbsent=0;
         // data[index].currentPercentage=0;
         // data[index].currentPresent=0;
         // data[index].totalClass=0;
-        
+
         if (result[i]?.current == true) {
           let currPer = data[index]?.currentPresent;
           currPer = currPer + 1;
@@ -82,7 +79,7 @@ const updateCNV = async (req, res) => {
 
         let per = (data[index]?.currentPresent / total) * 100;
         data[index].currentPercentage = per.toFixed(2);
-       await data[index].save();
+        await data[index].save();
         index++;
       }
     }
@@ -97,14 +94,71 @@ const updateCNV = async (req, res) => {
 const studentShowCNV = async (req, res) => {
   try {
     const MIS = req.body.mis;
-    if(!MIS) {
-      return res.json(error(403,"All Filled Required"))
+    if (!MIS) {
+      return res.json(error(403, "All Filled Required"));
     }
-    const student = await User.find({MIS});
+    const student = await User.find({ MIS });
 
     return res.json(success(200, { student }));
   } catch (err) {
     return res.json(error(401, err.message));
   }
 };
-module.exports = { CNV, updateCNV ,studentShowCNV };
+const studentShowCNVMarks = async (req, res) => {
+  try {
+    const MIS = req.body.mis;
+    if (!MIS) {
+      return res.json(error(403, "All Filled Required"));
+    }
+    const student = await User.find({ MIS });
+
+    return res.json(success(200, { student }));
+  } catch (err) {
+    return res.json(error(401, err.message));
+  }
+};
+
+const updateCNVMarks = async (req, res) => {
+  const marks = req.body?.marks;
+  const sec = req.body?.sec;
+
+  // console.log(marks);
+  // return res.json(success(200,marks))
+  try {
+    const data = await User.find();
+    let index = 0;
+    // return res.json(success(200,{data}))
+    if (sec == "A") {
+      for (let i = 1; i < 136; i++) {
+        
+        data[index].t1+=marks[index].t1;
+        data[index].t2+=marks[index].t2;
+        data[index].t3+=marks[index].t3;
+        await data[index].save();
+        index++;
+      }
+    } else {
+      index = 135;
+      for (let i = 1; i < data.length; i++) {
+        data[index].t1+=marks[index].t1;
+        data[index].t2+=marks[index].t2;
+        data[index].t3+=marks[index].t3;
+        await data[index].save();
+        index++;
+      }
+    }
+    // console.log(result);
+    return res.json(success(200, "Successfully updated"));
+  } catch (err) {
+    console.log(err.message);
+    return res.json(error(401, err.message));
+  }
+ 
+};
+module.exports = {
+  CNV,
+  updateCNV,
+  studentShowCNV,
+  updateCNVMarks,
+  studentShowCNVMarks,
+};

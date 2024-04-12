@@ -13,6 +13,7 @@ const Sem6Router = require("./router/Sem/sem6");
 const teacherRouter = require("./router/Teacher");
 const studentRouter=require('./router/Student')
 const attendanceRouter = require("./router/AttendanceShow");
+const marksRouter = require("./router/Marks");
 
 app.use(
   cors({
@@ -33,6 +34,7 @@ app.use("/sem6", Sem6Router);
 app.use("/teacher", teacherRouter);
 app.use("/student", studentRouter);
 app.use("/attendance", attendanceRouter);
+app.use("/marks", marksRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

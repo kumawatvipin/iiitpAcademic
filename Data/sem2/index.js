@@ -1,6 +1,18 @@
-const { CNV, updateCNV, studentShowCNV } = require("./CNV");
+const {
+  CNV,
+  updateCNV,
+  studentShowCNV,
+  updateCNVMarks,
+  studentShowCNVMarks,
+} = require("./CNV");
 const { DLD, updateDLD, studentShowDLD } = require("./DLD");
-const { DSA, updateDSA, studentShowDSA } = require("./DSA");
+const {
+  DSA,
+  updateDSA,
+  studentShowDSA,
+  updateDSAMarks,
+  studentShowDSAMarks,
+} = require("./DSA");
 const { EM2, updateEM2, studentShowEM2 } = require("./EM2");
 const {
   EntreStudies,
@@ -30,6 +42,9 @@ module.exports = {
   updateHumanities,
   updateOOPL,
 
+  updateCNVMarks,
+  updateDSAMarks,
+
   studentShowCNV,
   studentShowDLD,
   studentShowDSA,
@@ -37,4 +52,7 @@ module.exports = {
   studentShowEntreStudies,
   studentShowHumanities,
   studentShowOOPL,
+
+  studentShowCNVMarks,
+  studentShowDSAMarks,
 };

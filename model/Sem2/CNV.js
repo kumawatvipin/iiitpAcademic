@@ -32,15 +32,15 @@ const userSchema = mongoose.Schema(
       type: Boolean,
     },
     t1: {
-      type: String,
+      type: Number,
       default: 0,
     },
     t2: {
-      type: String,
+      type: Number,
       default: 0,
     },
     t3: {
-      type: String,
+      type: Number,
       default: 0,
     },
   },

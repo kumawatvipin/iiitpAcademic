@@ -11,7 +11,7 @@ const Sem2Router = require("./router/Sem/Sem2");
 const Sem4Router = require("./router/Sem/sem4");
 const Sem6Router = require("./router/Sem/sem6");
 const teacherRouter = require("./router/Teacher");
-const studentRouter=require('./router/Student')
+const studentRouter = require("./router/Student");
 const attendanceRouter = require("./router/AttendanceShow");
 const marksRouter = require("./router/Marks");
 

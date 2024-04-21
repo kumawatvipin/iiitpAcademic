@@ -1,6 +1,5 @@
 const User = require("../../model/Teacher/Teacher");
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
 const { success, error } = require("../../utils/wrapper");
 const TeacherSignupControllers = async (req, res) => {
   try {

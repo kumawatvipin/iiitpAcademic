@@ -38,12 +38,10 @@ const update = async (req, res) => {
 };
 const get = async (req, res) => {
   try {
-
-    console.log("vipin");
     const mis = req.body.mis;
-    console.log(mis);
+
     const data = await User.find({ mis });
-    res.json(success(200, {data}));
+    res.json(success(200, { data }));
   } catch (err) {
     res.json(error(402, err.message));
   }

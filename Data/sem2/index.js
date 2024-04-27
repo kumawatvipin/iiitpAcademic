@@ -13,7 +13,7 @@ const {
   updateDSAMarks,
   studentShowDSAMarks,
 } = require("./DSA");
-const { EM2, updateEM2, studentShowEM2 } = require("./EM2");
+const { EM2, updateEM2, studentShowEM2 ,updateEM2Marks,studentShowEM2Marks} = require("./EM2");
 const {
   EntreStudies,
   updateEntreStudies,
@@ -44,6 +44,7 @@ module.exports = {
 
   updateCNVMarks,
   updateDSAMarks,
+  updateEM2Marks,
 
   studentShowCNV,
   studentShowDLD,
@@ -55,4 +56,5 @@ module.exports = {
 
   studentShowCNVMarks,
   studentShowDSAMarks,
+  studentShowEM2Marks
 };

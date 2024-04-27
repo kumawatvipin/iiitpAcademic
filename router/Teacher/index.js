@@ -8,5 +8,5 @@ const route = require("express").Router();
 
 route.post("/signup", TeacherSignupControllers);
 route.post("/login", TeacherloginController);
-route.post("/refresh", refreshController);
+route.get("/refresh", refreshController);
 module.exports = route;

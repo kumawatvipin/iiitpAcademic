@@ -90,7 +90,7 @@ const generateRefershtoken = data => {
   }
 };
 const refreshController = async (req, res) => {
-  const refreshToken = req.cookies?.jwt;
+  const refreshToken = req?.cookies?.jwt;
   // console.log(req.cookies);
   if (!refreshToken) {
     // return res.send("refresh token required");

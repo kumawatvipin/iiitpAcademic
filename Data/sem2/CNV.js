@@ -158,6 +158,8 @@ const updateCNVMarks = async (req, res) => {
     return res.json(error(401, err.message));
   }
 };
+
+
 module.exports = {
   CNV,
   updateCNV,

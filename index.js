@@ -16,7 +16,7 @@ const attendanceRouter = require("./router/AttendanceShow");
 const marksRouter = require("./router/Marks");
 const statsRouter = require("./router/Static");
 const Poll = require("./router/Poll");
-
+// const morgan = require('morgan')
 app.use(
   cors({
     credentials: true,
@@ -26,6 +26,7 @@ app.use(
 );
 
 app.use(cookie());
+// app.use(morgan("common"));
 app.get("/", (req, res) => {
   res.send("connected");
 });

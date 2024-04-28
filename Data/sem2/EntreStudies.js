@@ -143,9 +143,23 @@ const updateEntreStudiesMarks = async (req, res) => {
     return res.json(error(401, err.message));
   }
 };
+const studentShowEntreStudiesMarks = async (req, res) => {
+  try {
+    const MIS = req.body.mis;
+    if (!MIS) {
+      return res.json(error(403, "All Filled Required"));
+    }
+    const student = await User.find({ MIS });
+
+    return res.json(success(200, { student }));
+  } catch (err) {
+    return res.json(error(401, err.message));
+  }
+};
 module.exports = {
   EntreStudies,
   updateEntreStudies,
   studentShowEntreStudies,
   updateEntreStudiesMarks,
+  studentShowEntreStudiesMarks
 };

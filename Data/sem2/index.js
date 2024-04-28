@@ -5,7 +5,13 @@ const {
   updateCNVMarks,
   studentShowCNVMarks,
 } = require("./CNV");
-const { DLD, updateDLD, studentShowDLD } = require("./DLD");
+const {
+  DLD,
+  updateDLD,
+  studentShowDLD,
+  updateDLDMarks,
+  studentShowDLDMarks,
+} = require("./DLD");
 const {
   DSA,
   updateDSA,
@@ -13,18 +19,34 @@ const {
   updateDSAMarks,
   studentShowDSAMarks,
 } = require("./DSA");
-const { EM2, updateEM2, studentShowEM2 ,updateEM2Marks,studentShowEM2Marks} = require("./EM2");
+const {
+  EM2,
+  updateEM2,
+  studentShowEM2,
+  updateEM2Marks,
+  studentShowEM2Marks,
+} = require("./EM2");
 const {
   EntreStudies,
   updateEntreStudies,
   studentShowEntreStudies,
+  updateEntreStudiesMarks,
+  studentShowEntreStudiesMarks,
 } = require("./EntreStudies");
 const {
   Humanities,
   updateHumanities,
   studentShowHumanities,
+  updateHumanitiesMarks,
+  studentShowHumanitiesMarks,
 } = require("./Humanities");
-const { OOPL, updateOOPL, studentShowOOPL } = require("./OOPL");
+const {
+  OOPL,
+  updateOOPL,
+  studentShowOOPL,
+  updateOOPLMarks,
+  studentShowOOPLMarks,
+} = require("./OOPL");
 
 module.exports = {
   CNV,
@@ -45,7 +67,11 @@ module.exports = {
   updateCNVMarks,
   updateDSAMarks,
   updateEM2Marks,
-
+  updateEntreStudiesMarks,
+  updateHumanitiesMarks,
+  updateOOPLMarks,
+  updateDLDMarks,
+  
   studentShowCNV,
   studentShowDLD,
   studentShowDSA,
@@ -53,8 +79,12 @@ module.exports = {
   studentShowEntreStudies,
   studentShowHumanities,
   studentShowOOPL,
-
+  
   studentShowCNVMarks,
   studentShowDSAMarks,
-  studentShowEM2Marks
+  studentShowDLDMarks,
+  studentShowEM2Marks,
+  studentShowOOPLMarks,
+  studentShowHumanitiesMarks,
+  studentShowEntreStudiesMarks,
 };

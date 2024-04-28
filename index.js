@@ -16,6 +16,7 @@ const attendanceRouter = require("./router/AttendanceShow");
 const marksRouter = require("./router/Marks");
 const statsRouter = require("./router/Static");
 const Poll = require("./router/Poll");
+const feedbackRouter = require("./router/feedback");
 // const morgan = require('morgan')
 app.use(
   cors({
@@ -40,7 +41,7 @@ app.use("/attendance", attendanceRouter);
 app.use("/marks", marksRouter);
 app.use("/stats", statsRouter);
 app.use("/polls", Poll);
-
+app.use("/feedback", feedbackRouter);
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
   Db();
